@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>RIVAL ULTRA — 3D Cyber Glass Arcade</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <!-- Interactive 3D Holographic Core Background -->
+    <div id="hero-3d-container"></div>
+
+    <!-- Liquid Background Gradients -->
+    <div class="living-bg">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+      <div class="cyber-grid-overlay"></div>
+    </div>
+
+    <!-- Main Glass Application Shell -->
+    <div id="app" class="app-shell">
+      <!-- Topbar Navigation -->
+      <header class="glass-topbar">
+        <div class="brand-group">
+          <div class="brand-logo">RIVAL</div>
+          <span class="brand-badge">ULTRA 3D</span>
+        </div>
+
+        <nav class="topbar-nav">
+          <button class="nav-pill is-active" data-view="arenas">
+            <span class="nav-icon">🕹️</span>
+            <span>ARENALAR</span>
+          </button>
+          <button class="nav-pill" data-view="leaderboard">
+            <span class="nav-icon">🏆</span>
+            <span>REYTING</span>
+          </button>
+          <button class="nav-pill" data-view="profile">
+            <span class="nav-icon">👤</span>
+            <span>PROFIL</span>
+          </button>
+          <button class="nav-pill" data-view="rewards">
+            <span class="nav-icon">🎁</span>
+            <span>SOVRINLAR</span>
+          </button>
+        </nav>
+
+        <div class="topbar-actions">
+          <button id="btn-sound" class="glass-icon-btn" title="Ovoz">🔊</button>
+          <div id="top-user-pill" class="user-quick-pill" title="Profilni tahrirlash">
+            <span id="top-avatar" class="user-avatar-tag">🥷</span>
+            <div class="user-quick-info">
+              <span id="top-username" class="user-quick-name">Chempion</span>
+              <span id="top-level" class="user-quick-lvl">LVL 2</span>
+            </div>
+            <div class="coin-badge">
+              <span class="coin-gem">🪙</span>
+              <span id="top-coins">450</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- View Container -->
+      <main class="main-content">
+        <!-- 1. ARENAS VIEW -->
+        <section id="view-arenas" class="app-view active">
+          <!-- Hero Banner -->
+          <div class="glass-hero-banner">
+            <div class="hero-left">
+              <div class="hero-tag">NEXT-GEN KIBER ORGANIZM</div>
+              <h1 class="hero-title">11 TA ELITA ARENA, CHEKSIZ ADRENALIN.</h1>
+              <p class="hero-desc">
+                Haqiqiy 3D grafikalar, refleks va aql janglari. O‘z sevimli arenangizni tanlang, rekordlarni yangilang va global reyting cho‘qqisini zabt eting.
+              </p>
+            </div>
+            <div class="hero-stats-panel">
+              <div class="hero-stat-card">
+                <span class="h-stat-num">11</span>
+                <span class="h-stat-lbl">ELITA ARENALAR</span>
+              </div>
+              <div class="hero-stat-card">
+                <span class="h-stat-num">60+</span>
+                <span class="h-stat-lbl">FPS WEBGL 3D</span>
+              </div>
+              <div class="hero-stat-card">
+                <span class="h-stat-num">1.4K</span>
+                <span class="h-stat-lbl">FAOL RAQIBLAR</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cartridge Grid Rack -->
+          <div class="rack-header">
+            <div class="rack-title-group">
+              <h2 class="rack-title">O‘YINLAR KATALOGI</h2>
+              <span class="rack-sub">To‘g‘ridan-to‘g‘ri brauzerda yuklashlarsiz o‘ynang</span>
+            </div>
+          </div>
+
+          <div id="cartridge-grid" class="cartridge-grid">
+            <!-- Dynamically populated from GAMES_CATALOG -->
+          </div>
+        </section>
+
+        <!-- 2. LEADERBOARD VIEW -->
+        <section id="view-leaderboard" class="app-view">
+          <div class="leaderboard-container">
+            <div class="lb-header-block">
+              <h2 class="section-title">GLOBAL REYTING JADVALI</h2>
+              <p class="section-sub">Dunyodagi eng kuchli kiber-o‘yinchilar bilan raqobatlashing</p>
+
+              <!-- Category filter pills -->
+              <div class="lb-filter-bar">
+                <button class="filter-pill is-active" data-cat="all">Barchasi (Umumiy)</button>
+                <button class="filter-pill" data-cat="sodacrush">Candy Soda Crush</button>
+                <button class="filter-pill" data-cat="subway">Subway Dash</button>
+                <button class="filter-pill" data-cat="soda">Soda Rush 3D</button>
+                <button class="filter-pill" data-cat="drift">Drift 3D</button>
+                <button class="filter-pill" data-cat="slope">Slope 3D</button>
+                <button class="filter-pill" data-cat="g2048">2048 Cyber</button>
+                <button class="filter-pill" data-cat="reflex">Reflex Matrix</button>
+                <button class="filter-pill" data-cat="spacedodge">Space Dodge</button>
+                <button class="filter-pill" data-cat="cyberflappy">Cyber Flappy</button>
+                <button class="filter-pill" data-cat="miner">Voxel Digger</button>
+                <button class="filter-pill" data-cat="snake">Retro Snake</button>
+              </div>
+            </div>
+
+            <!-- Top 3 Podium Cards -->
+            <div id="podium-cards" class="podium-grid">
+              <!-- Dynamically populated -->
+            </div>
+
+            <!-- Full Ranked Table -->
+            <div class="glass-table-wrapper">
+              <table class="glass-table">
+                <thead>
+                  <tr>
+                    <th>O‘RIN</th>
+                    <th>O‘YINCHI</th>
+                    <th>RANG / DARAJA</th>
+                    <th>DARAXT</th>
+                    <th class="text-right">OCHKO</th>
+                  </tr>
+                </thead>
+                <tbody id="leaderboard-tbody">
+                  <!-- Dynamically populated -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. PROFILE VIEW -->
+        <section id="view-profile" class="app-view">
+          <div class="profile-container">
+            <!-- Left Card: User Identity -->
+            <div class="glass-panel profile-id-card">
+              <div class="profile-avatar-wrap">
+                <div id="profile-avatar-display" class="profile-avatar-large">🥷</div>
+                <button id="btn-edit-avatar" class="avatar-edit-badge">✏️</button>
+              </div>
+              <div class="profile-meta">
+                <div class="profile-name-row">
+                  <h2 id="profile-name-display" class="profile-username">KiberChempion</h2>
+                  <button id="btn-edit-username" class="name-edit-btn" title="Ismni o‘zgartirish">✏️</button>
+                </div>
+                <div id="profile-tier-badge" class="tier-pill tier-gold">GOLD • ARENA MASTER</div>
+              </div>
+
+              <!-- Level & XP Progress -->
+              <div class="profile-xp-box">
+                <div class="xp-row">
+                  <span id="profile-level-display">DARAJA 2</span>
+                  <span id="profile-xp-display">120 / 250 XP</span>
+                </div>
+                <div class="xp-track">
+                  <div id="profile-xp-bar" class="xp-fill" style="width: 48%;"></div>
+                </div>
+              </div>
+
+              <!-- Coin Purse -->
+              <div class="profile-wallet">
+                <span class="wallet-icon">🪙</span>
+                <div class="wallet-info">
+                  <span class="wallet-lbl">KIBER TOKENLAR</span>
+                  <strong id="profile-coins-display" class="wallet-val">450</strong>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Card: Game Statistics & Records -->
+            <div class="glass-panel profile-stats-card">
+              <h3 class="card-title">FAOLIYAT STATISTIKASI</h3>
+              <div class="stats-metric-grid">
+                <div class="metric-box">
+                  <span class="metric-val" id="stat-total-matches">4</span>
+                  <span class="metric-lbl">O‘YNALLANGAN O‘YINLAR</span>
+                </div>
+                <div class="metric-box">
+                  <span class="metric-val accent-cyan" id="stat-total-score">1,250</span>
+                  <span class="metric-lbl">JAMI TO‘PLANGAN OCHKO</span>
+                </div>
+                <div class="metric-box">
+                  <span class="metric-val accent-gold" id="stat-achievements-count">2 / 8</span>
+                  <span class="metric-lbl">YUTUQ VA MEDALLAR</span>
+                </div>
+              </div>
+
+              <!-- High Scores per Game -->
+              <h4 class="subcard-title">ARENALAR BO‘YICHA REKORDLAR</h4>
+              <div id="profile-records-list" class="records-grid">
+                <!-- Dynamically populated -->
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. REWARDS VIEW -->
+        <section id="view-rewards" class="app-view">
+          <div class="rewards-container">
+            <h2 class="section-title">KUNDALIK SOVRINLAR & YUTUQLAR</h2>
+            <p class="section-sub">Har kuni platformaga kiring va bepul tokenlar hamda XP oling!</p>
+
+            <div class="streak-grid">
+              <div class="streak-day completed">
+                <span class="s-day">1-KUN</span>
+                <span class="s-gift">🪙 +50</span>
+                <span class="s-status">OLINDI ✓</span>
+              </div>
+              <div class="streak-day completed">
+                <span class="s-day">2-KUN</span>
+                <span class="s-gift">🪙 +100</span>
+                <span class="s-status">OLINDI ✓</span>
+              </div>
+              <div class="streak-day active-claim">
+                <span class="s-day">3-KUN</span>
+                <span class="s-gift">🪙 +200</span>
+                <button id="btn-claim-reward" class="claim-btn pulse-glow">OLISH!</button>
+              </div>
+              <div class="streak-day locked">
+                <span class="s-day">4-KUN</span>
+                <span class="s-gift">🪙 +300</span>
+                <span class="s-status">🔒 KELGUSI</span>
+              </div>
+              <div class="streak-day locked">
+                <span class="s-day">5-KUN</span>
+                <span class="s-gift">🪙 +500</span>
+                <span class="s-status">🔒 KELGUSI</span>
+              </div>
+              <div class="streak-day locked mystery">
+                <span class="s-day">7-KUN</span>
+                <span class="s-gift">👑 SUPER BOX</span>
+                <span class="s-status">🔒 SIRLI</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Active Game Launcher Modal (Glass Shell) -->
+    <div id="game-modal" class="game-modal-overlay hidden">
+      <div class="game-modal-shell">
+        <header class="game-modal-header">
+          <div class="gm-left">
+            <span id="gm-icon" class="gm-icon">🏎️</span>
+            <div class="gm-titles">
+              <h3 id="gm-title" class="gm-title">NEON DRIFT 3D</h3>
+              <span id="gm-category" class="gm-category">3D Harakat</span>
+            </div>
+          </div>
+
+          <div class="gm-center-score">
+            <span class="gm-score-lbl">OCHKO:</span>
+            <strong id="gm-live-score" class="gm-score-val">0</strong>
+          </div>
+
+          <button id="btn-close-game" class="gm-close-btn" title="Chiqish">✕ CHIQISH</button>
+        </header>
+
+        <!-- Stage for active game -->
+        <div id="active-game-container" class="active-game-stage"></div>
+
+        <!-- In-game Game Over Overlay -->
+        <div id="in-gameover-overlay" class="game-result-modal hidden">
+          <div class="glass-card result-card">
+            <h2 class="result-title">O‘YIN YAKUNLANDI</h2>
+            <div class="result-score-block">
+              <span class="res-lbl">FINAL OCHKO:</span>
+              <strong id="res-score" class="res-val">0</strong>
+            </div>
+
+            <div id="res-best-banner" class="res-new-best hidden">🌟 YANGI REKORD! 🌟</div>
+
+            <div class="res-rewards-grid">
+              <div class="res-reward-box">
+                <span>XP ORTTIRILDI</span>
+                <strong id="res-xp">+45 XP</strong>
+              </div>
+              <div class="res-reward-box">
+                <span>TOKENLAR</span>
+                <strong id="res-coins">+20 🪙</strong>
+              </div>
+            </div>
+
+            <div class="result-actions">
+              <button id="btn-retry-game" class="glass-btn-primary">QAYTA O‘YNASH</button>
+              <button id="btn-quit-game" class="glass-btn-secondary">ARENAGA QAYTISH</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit Profile Modal -->
+    <div id="edit-profile-modal" class="modal-backdrop hidden">
+      <div class="glass-card edit-profile-card">
+        <div class="modal-header">
+          <h3>PROFILNI TAHRIRLASH</h3>
+          <button id="btn-close-edit-modal" class="modal-x">✕</button>
+        </div>
+
+        <div class="avatar-select-section">
+          <label>AVATARNI TANLANG:</label>
+          <div id="avatar-options-grid" class="avatar-options-grid"></div>
+        </div>
+
+        <div class="input-field-group">
+          <label for="edit-username-input">KIBER ISMINGIZ:</label>
+          <input type="text" id="edit-username-input" maxlength="16" placeholder="Ism kiriting..." />
+        </div>
+
+        <button id="btn-save-profile" class="glass-btn-primary">SAQLASH</button>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
